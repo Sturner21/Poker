@@ -451,15 +451,22 @@ def bestHand(h):
 
 def checkWin(hands):
 
+    #List of scored hands to be returned
     bestPlayerHand = []
     
+    #Add the values of each hand to list
     for n in range(len(hands)):
 
         bestPlayerHand.append(bestHand(hands[n])[0])
 
+    #If there is only 1 hand with the highest value, return that
     if bestPlayerHand.count(max(bestPlayerHand)) < 2:
 
         return max(bestPlayerHand), bestPlayerHand
+
+    #If there is more than one hand with equal value, find which hand should win
+    elif bestPlayerHand.count(max(bestPlayerHand)) >= 2:
+        pass
 
     else:
         return bestPlayerHand
